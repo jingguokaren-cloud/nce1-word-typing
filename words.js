@@ -8,10 +8,10 @@ const nceWords = {
       { en: "excuse", cn: "原谅" },
       { en: "me", cn: "我(宾格)" },
       { en: "yes", cn: "是的" },
-      { en: "is   v.be", cn: "动词现在时第三人称单数" },
+      { en: "is", cn: "be动词现在时第三人称单数" },
       { en: "this", cn: "这" },
       { en: "your", cn: "你的，你们的" },
-      { en: "handbag   n.(", cn: "女用)手提包" },
+      { en: "handbag", cn: "(女用)手提包" },
       { en: "pardon", cn: "原谅，请再说一遍" },
       { en: "it", cn: "它" },
       { en: "thank you", cn: "感谢你(们)" },
@@ -80,7 +80,7 @@ const nceWords = {
   6: {
     title: "Lesson 6: What make is it?",
     words: [
-      { en: "make   n.(", cn: "产品的)牌号" },
+      { en: "make", cn: "(产品的)牌号" },
       { en: "Swedish", cn: "瑞典的" },
       { en: "English", cn: "英国的" },
       { en: "American", cn: "美国的" },
@@ -99,8 +99,8 @@ const nceWords = {
     title: "Lesson 7: Are you a teacher?",
     words: [
       { en: "I", cn: "我" },
-      { en: "am   v.be", cn: "动词现在时第一人称单数" },
-      { en: "are   v.be", cn: "动词现在时复数" },
+      { en: "am", cn: "be动词现在时第一人称单数" },
+      { en: "are", cn: "be动词现在时复数" },
       { en: "name", cn: "名字" },
       { en: "what", cn: "什么" },
       { en: "nationality", cn: "国籍" },
@@ -336,7 +336,7 @@ const nceWords = {
       { en: "left", cn: "左边" },
       { en: "cooker", cn: "炉子，炊具" },
       { en: "middle", cn: "中间" },
-      { en: "of   prep.(", cn: "属于)…的" },
+      { en: "of", cn: "(属于)…的" },
       { en: "room", cn: "房间" },
       { en: "cup", cn: "杯子" }
     ]
@@ -363,7 +363,7 @@ const nceWords = {
   28: {
     title: "Lesson 28: Where are they?",
     words: [
-      { en: "trousers   n.〔", cn: "复数〕长裤" }
+      { en: "trousers", cn: "〔复数〕长裤" }
     ]
   },
   29: {
@@ -422,7 +422,7 @@ const nceWords = {
       { en: "milk", cn: "牛奶" },
       { en: "meal", cn: "饭，一顿饭" },
       { en: "drink", cn: "喝" },
-      { en: "tap   n.(", cn: "水)龙头" }
+      { en: "tap", cn: "(水)龙头" }
     ]
   },
   33: {
@@ -540,8 +540,8 @@ const nceWords = {
     title: "Lesson 42: Is there a/any...?",
     words: [
       { en: "bird", cn: "鸟" },
-      { en: "any", cn: "一些" },
-      { en: "some", cn: "一些" }
+      { en: "any det.", cn: "一些" },
+      { en: "some det.", cn: "一些" }
     ]
   },
   43: {
@@ -612,7 +612,7 @@ const nceWords = {
     title: "Lesson 49: At the butcher's.",
     words: [
       { en: "butcher", cn: "卖肉的" },
-      { en: "meat   n.(", cn: "食用)肉" },
+      { en: "meat", cn: "(食用)肉" },
       { en: "beef", cn: "牛肉" },
       { en: "lamb", cn: "羔羊肉" },
       { en: "husband", cn: "丈夫" },
@@ -655,18 +655,18 @@ const nceWords = {
       { en: "autumn", cn: "秋天" },
       { en: "winter", cn: "冬天" },
       { en: "snow", cn: "下雪" },
-      { en: "January   n.1", cn: "月" },
-      { en: "February   n.2", cn: "月" },
-      { en: "March   n.3", cn: "月" },
-      { en: "April   n.4", cn: "月" },
-      { en: "May   n.5", cn: "月" },
-      { en: "June   n.6", cn: "月" },
-      { en: "July   n.7", cn: "月" },
-      { en: "August   n.8", cn: "月" },
-      { en: "September   n.9", cn: "月" },
-      { en: "October   n.10", cn: "月" },
-      { en: "November   n.11", cn: "月" },
-      { en: "December   n.12", cn: "月" }
+      { en: "January", cn: "1月" },
+      { en: "February", cn: "2月" },
+      { en: "March", cn: "3月" },
+      { en: "April", cn: "4月" },
+      { en: "May", cn: "5月" },
+      { en: "June", cn: "6月" },
+      { en: "July", cn: "7月" },
+      { en: "August", cn: "8月" },
+      { en: "September", cn: "9月" },
+      { en: "October", cn: "10月" },
+      { en: "November", cn: "11月" },
+      { en: "December", cn: "12月" }
     ]
   },
   52: {
@@ -700,7 +700,7 @@ const nceWords = {
       { en: "night", cn: "夜晚" },
       { en: "rise", cn: "升起" },
       { en: "early", cn: "早" },
-      { en: "set   v.(", cn: "太阳)落下去" },
+      { en: "set", cn: "(太阳)落下去" },
       { en: "late", cn: "晚，迟" },
       { en: "interesting", cn: "有趣的，有意思的" },
       { en: "subject", cn: "话题" },
@@ -874,7 +874,7 @@ const nceWords = {
       { en: "Tuesday", cn: "星期二" },
       { en: "Wednesday", cn: "星期三" },
       { en: "Thursday", cn: "星期四" },
-      { en: "keep   v.(", cn: "身体健康)处于(状况)" },
+      { en: "keep", cn: "(身体健康)处于(状况)" },
       { en: "spend", cn: "度过" },
       { en: "weekend", cn: "周末" },
       { en: "Friday", cn: "星期五" },
@@ -905,7 +905,7 @@ const nceWords = {
       { en: "just", cn: "正好，恰好" },
       { en: "finish", cn: "结尾，结束" },
       { en: "winner", cn: "获胜者" },
-      { en: "behind   prop.", cn: "在…之后" },
+      { en: "behind prop.", cn: "在…之后" },
       { en: "way", cn: "路途" }
     ]
   },
@@ -966,7 +966,7 @@ const nceWords = {
       { en: "ago", cn: "以前" },
       { en: "buy", cn: "买" },
       { en: "pair", cn: "双，对" },
-      { en: "fashion   n.(", cn: "服装的)流行式样" },
+      { en: "fashion", cn: "(服装的)流行式样" },
       { en: "uncomfortable", cn: "不舒服的" },
       { en: "wear", cn: "穿着" }
     ]
@@ -1084,7 +1084,7 @@ const nceWords = {
     title: "Lesson 89: For sale",
     words: [
       { en: "believe", cn: "相信，认为" },
-      { en: "may   (", cn: "用于请求许可)可以" },
+      { en: "may (", cn: "用于请求许可)可以" },
       { en: "how long", cn: "多长" },
       { en: "since", cn: "自从" },
       { en: "why", cn: "为什么" },
@@ -1171,7 +1171,7 @@ const nceWords = {
       { en: "label", cn: "标签" },
       { en: "handle", cn: "提手，把手" },
       { en: "address", cn: "地址" },
-      { en: "pence   n.penny", cn: "的复数形式" },
+      { en: "pence", cn: "penny的复数形式" },
       { en: "belong", cn: "属于" }
     ]
   },
@@ -1193,7 +1193,7 @@ const nceWords = {
       { en: "help", cn: "帮助" },
       { en: "at once", cn: "立即" },
       { en: "sure", cn: "一定的，确信的" },
-      { en: "X-ray   n.X", cn: "光透视" }
+      { en: "X-ray", cn: "X光透视" }
     ]
   },
   100: {
@@ -1295,7 +1295,7 @@ const nceWords = {
       { en: "idea", cn: "主意" },
       { en: "a little", cn: "少许(用于不可数名词之前)" },
       { en: "teaspoonful", cn: "一满茶匙" },
-      { en: "less   a.(little", cn: "的比较级)校少的，更小的" },
+      { en: "less", cn: "(little的比较级)校少的，更小的" },
       { en: "a few", cn: "几个(用于可数名词之前)" },
       { en: "pity", cn: "遗憾" },
       { en: "instead", cn: "代替" },
@@ -1305,11 +1305,11 @@ const nceWords = {
   110: {
     title: "Lesson 110: How do they compare?",
     words: [
-      { en: "most   a.(many,much", cn: "的最高级)最多的" },
-      { en: "least   a.(little", cn: "的最高级)最小的，最少的" },
-      { en: "best   a.(good", cn: "的最高级)最好的" },
-      { en: "worse   a.(bad", cn: "的比较级)更坏的" },
-      { en: "worst   a.(bad", cn: "的最高级)最坏的" }
+      { en: "most", cn: "(many,much的最高级)最多的" },
+      { en: "least", cn: "(little的最高级)最小的，最少的" },
+      { en: "best", cn: "(good的最高级)最好的" },
+      { en: "worse", cn: "(bad的比较级)更坏的" },
+      { en: "worst", cn: "(bad的最高级)最坏的" }
     ]
   },
   111: {
@@ -1351,7 +1351,7 @@ const nceWords = {
   115: {
     title: "Lesson 115: Knock, knock!",
     words: [
-      { en: "anyone pron.(", cn: "用于疑问句，否定式)任何人" },
+      { en: "anyone", cn: "(用于疑问句，否定式)任何人" },
       { en: "knock", cn: "敲，打" },
       { en: "everything", cn: "一切事物" },
       { en: "quiet", cn: "宁静的，安静的" },
@@ -1396,7 +1396,7 @@ const nceWords = {
       { en: "enter", cn: "进入" },
       { en: "dark", cn: "黑暗的" },
       { en: "torch", cn: "手电筒" },
-      { en: "voice   n.(", cn: "说话的)声音" },
+      { en: "voice", cn: "(说话的)声音" },
       { en: "parrot", cn: "鹦鹉" }
     ]
   },
@@ -1433,7 +1433,7 @@ const nceWords = {
       { en: "job", cn: "工作" },
       { en: "guess", cn: "猜" },
       { en: "grow", cn: "长，让…生长" },
-      { en: "beard   n.(", cn: "下巴上的)胡子，络腮胡子" }
+      { en: "beard", cn: "(下巴上的)胡子，络腮胡子" }
     ]
   },
   124: {
