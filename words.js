@@ -1,4 +1,4 @@
-// NCE1 核心单词数据 (严格遵循官方教材)
+// NCE1 前50课单词数据
 // 每课包含课文标题和核心生词（含中文释义）
 
 const nceWords = {
@@ -6,15 +6,15 @@ const nceWords = {
     title: "Lesson 1: Excuse me!",
     words: [
       { en: "excuse", cn: "原谅" },
-      { en: "me", cn: "我" },
+      { en: "me", cn: "我(宾格)" },
       { en: "yes", cn: "是的" },
-      { en: "is", cn: "是" },
+      { en: "is   v.be", cn: "动词现在时第三人称单数" },
       { en: "this", cn: "这" },
-      { en: "your", cn: "你的" },
-      { en: "handbag", cn: "手提包" },
-      { en: "pardon", cn: "原谅" },
+      { en: "your", cn: "你的，你们的" },
+      { en: "handbag   n.(", cn: "女用)手提包" },
+      { en: "pardon", cn: "原谅，请再说一遍" },
       { en: "it", cn: "它" },
-      { en: "thank you", cn: "感谢你" },
+      { en: "thank you", cn: "感谢你(们)" },
       { en: "very much", cn: "非常地" }
     ]
   },
@@ -25,7 +25,7 @@ const nceWords = {
       { en: "pencil", cn: "铅笔" },
       { en: "book", cn: "书" },
       { en: "watch", cn: "手表" },
-      { en: "coat", cn: "上衣" },
+      { en: "coat", cn: "上衣，外衣" },
       { en: "dress", cn: "连衣裙" },
       { en: "skirt", cn: "裙子" },
       { en: "shirt", cn: "衬衣" },
@@ -43,7 +43,7 @@ const nceWords = {
       { en: "ticket", cn: "票" },
       { en: "number", cn: "号码" },
       { en: "five", cn: "五" },
-      { en: "sorry", cn: "对不起" },
+      { en: "sorry", cn: "对不起的" },
       { en: "sir", cn: "先生" },
       { en: "cloakroom", cn: "衣帽存放处" }
     ]
@@ -80,25 +80,33 @@ const nceWords = {
   6: {
     title: "Lesson 6: What make is it?",
     words: [
-      { en: "make", cn: "(产品的)牌号" },
+      { en: "make   n.(", cn: "产品的)牌号" },
       { en: "Swedish", cn: "瑞典的" },
       { en: "English", cn: "英国的" },
       { en: "American", cn: "美国的" },
       { en: "Italian", cn: "意大利的" },
+      { en: "Volvo", cn: "沃尔沃" },
+      { en: "Peugeot", cn: "标致" },
+      { en: "Mercedes", cn: "梅赛德斯" },
+      { en: "Toyota", cn: "丰田" },
+      { en: "Daewoo", cn: "大宇" },
+      { en: "Mini", cn: "迷你" },
+      { en: "Ford", cn: "福特" },
+      { en: "Fiat", cn: "菲亚特" }
     ]
   },
   7: {
     title: "Lesson 7: Are you a teacher?",
     words: [
       { en: "I", cn: "我" },
-      { en: "am", cn: "是" },
-      { en: "are", cn: "是" },
+      { en: "am   v.be", cn: "动词现在时第一人称单数" },
+      { en: "are   v.be", cn: "动词现在时复数" },
       { en: "name", cn: "名字" },
       { en: "what", cn: "什么" },
       { en: "nationality", cn: "国籍" },
       { en: "job", cn: "工作" },
-      { en: "keyboard", cn: "键盘" },
-      { en: "operator", cn: "操作员" },
+      { en: "keyboard", cn: "电脑键盘" },
+      { en: "operator", cn: "操作人员" },
       { en: "engineer", cn: "工程师" }
     ]
   },
@@ -107,20 +115,20 @@ const nceWords = {
     words: [
       { en: "policeman", cn: "警察" },
       { en: "policewoman", cn: "女警察" },
-      { en: "taxi driver", cn: "出租车司机" },
-      { en: "air hostess", cn: "空姐" },
+      { en: "taxi driver", cn: "出租汽车司机" },
+      { en: "air hostess", cn: "空中小姐" },
       { en: "postman", cn: "邮递员" },
       { en: "nurse", cn: "护士" },
       { en: "mechanic", cn: "机械师" },
       { en: "hairdresser", cn: "理发师" },
-      { en: "housewife", cn: "家庭主妇" },
-      { en: "milkman", cn: "送奶工" }
+      { en: "housewife", cn: "家庭妇女" },
+      { en: "milkman", cn: "送牛奶的人" }
     ]
   },
   9: {
     title: "Lesson 9: How are you today?",
     words: [
-      { en: "hello", cn: "喂(问候语)" },
+      { en: "hello", cn: "喂(表示问候)" },
       { en: "hi", cn: "喂，嗨" },
       { en: "how", cn: "怎样" },
       { en: "today", cn: "今天" },
@@ -128,7 +136,7 @@ const nceWords = {
       { en: "fine", cn: "美好的" },
       { en: "thanks", cn: "谢谢" },
       { en: "goodbye", cn: "再见" },
-      { en: "see", cn: "看见" }
+      { en: "see", cn: "见" }
     ]
   },
   10: {
@@ -139,16 +147,14 @@ const nceWords = {
       { en: "thin", cn: "瘦的" },
       { en: "tall", cn: "高的" },
       { en: "short", cn: "矮的" },
-      { en: "boy", cn: "男孩" },
-      { en: "girl", cn: "女孩" },
       { en: "dirty", cn: "脏的" },
       { en: "clean", cn: "干净的" },
       { en: "hot", cn: "热的" },
       { en: "cold", cn: "冷的" },
       { en: "old", cn: "老的" },
       { en: "young", cn: "年轻的" },
-      { en: "busy", cn: "忙碌的" },
-      { en: "lazy", cn: "懒惰的" }
+      { en: "busy", cn: "忙的" },
+      { en: "lazy", cn: "懒的" }
     ]
   },
   11: {
@@ -181,10 +187,10 @@ const nceWords = {
       { en: "green", cn: "绿色" },
       { en: "come", cn: "来" },
       { en: "upstairs", cn: "楼上" },
-      { en: "smart", cn: "时髦的" },
+      { en: "smart", cn: "时髦的，巧妙的" },
       { en: "hat", cn: "帽子" },
       { en: "same", cn: "相同的" },
-      { en: "lovely", cn: "可爱的" }
+      { en: "lovely", cn: "可爱的，秀丽的" }
     ]
   },
   14: {
@@ -198,10 +204,12 @@ const nceWords = {
   15: {
     title: "Lesson 15: Your passports, please.",
     words: [
-      { en: "customs", cn: "海关" },
+      { en: "Customs", cn: "海关" },
       { en: "officer", cn: "官员" },
-      { en: "girl", cn: "女孩" },
-      { en: "boy", cn: "男孩" },
+      { en: "girl", cn: "女孩，姑娘" },
+      { en: "Danish", cn: "丹麦人" },
+      { en: "friend", cn: "朋友" },
+      { en: "Norwegian", cn: "挪威人" },
       { en: "passport", cn: "护照" },
       { en: "brown", cn: "棕色的" },
       { en: "tourist", cn: "旅游者" }
@@ -212,9 +220,7 @@ const nceWords = {
     words: [
       { en: "Russian", cn: "俄罗斯人" },
       { en: "Dutch", cn: "荷兰人" },
-      { en: "Norwegian", cn: "挪威人" },
-      { en: "Danish", cn: "丹麦人" },
-      { en: "these", cn: "这些" },
+      { en: "these", cn: "这些(this的复数)" },
       { en: "red", cn: "红色的" },
       { en: "grey", cn: "灰色的" },
       { en: "yellow", cn: "黄色的" },
@@ -227,7 +233,7 @@ const nceWords = {
     words: [
       { en: "employee", cn: "雇员" },
       { en: "hard-working", cn: "勤奋的" },
-      { en: "sales rep", cn: "推销员" },
+      { en: "sales reps", cn: "推销员" },
       { en: "man", cn: "男人" },
       { en: "office", cn: "办公室" },
       { en: "assistant", cn: "助手" }
@@ -242,11 +248,11 @@ const nceWords = {
     title: "Lesson 19: Tired and thirsty.",
     words: [
       { en: "matter", cn: "事情" },
-      { en: "children", cn: "孩子们" },
-      { en: "tired", cn: "累" },
+      { en: "children", cn: "孩子们(child 的复数)" },
+      { en: "tired", cn: "累，疲乏" },
       { en: "boy", cn: "男孩" },
       { en: "thirsty", cn: "渴" },
-      { en: "mum", cn: "妈妈" },
+      { en: "mum", cn: "妈妈(儿语)" },
       { en: "sit down", cn: "坐下" },
       { en: "right", cn: "好，可以" },
       { en: "ice cream", cn: "冰淇淋" }
@@ -263,8 +269,8 @@ const nceWords = {
       { en: "heavy", cn: "重的" },
       { en: "long", cn: "长的" },
       { en: "shoe", cn: "鞋子" },
-      { en: "grandfather", cn: "祖父" },
-      { en: "grandmother", cn: "祖母" }
+      { en: "grandfather", cn: "祖父，外祖父" },
+      { en: "grandmother", cn: "祖母，外祖母" }
     ]
   },
   21: {
@@ -281,27 +287,34 @@ const nceWords = {
       { en: "empty", cn: "空的" },
       { en: "full", cn: "满的" },
       { en: "large", cn: "大的" },
+      { en: "little", cn: "小的" },
+      { en: "sharp", cn: "尖的，锋利的" },
       { en: "small", cn: "小的" },
-      { en: "sharp", cn: "尖的" },
+      { en: "big", cn: "大的" },
       { en: "blunt", cn: "钝的" },
-      { en: "box", cn: "盒子" },
-      { en: "glass", cn: "玻璃杯" },
+      { en: "box", cn: "盒子，箱子" },
+      { en: "glass", cn: "杯子" },
       { en: "cup", cn: "茶杯" },
       { en: "bottle", cn: "瓶子" },
       { en: "tin", cn: "罐头" },
       { en: "knife", cn: "刀子" },
-      { en: "fork", cn: "叉子" },
-      { en: "spoon", cn: "勺子" }
+      { en: "fork", cn: "叉子" }
     ]
   },
   23: {
     title: "Lesson 23: Which glasses?",
     words: [
-      { en: "on", cn: "在...之上" },
+      { en: "on", cn: "在…之上" },
+      { en: "shelf", cn: "架子，搁板" }
+    ]
+  },
+  24: {
+    title: "Lesson 24: Give me/him/her/us/them some...",
+    words: [
       { en: "desk", cn: "课桌" },
       { en: "table", cn: "桌子" },
       { en: "plate", cn: "盘子" },
-      { en: "cupboard", cn: "橱柜" },
+      { en: "cupboard", cn: "食橱" },
       { en: "cigarette", cn: "香烟" },
       { en: "television", cn: "电视机" },
       { en: "floor", cn: "地板" },
@@ -312,11 +325,6 @@ const nceWords = {
       { en: "stereo", cn: "立体声音响" }
     ]
   },
-  24: {
-    title: "Lesson 24: Give me/him/her/us/them some...",
-    words: [
-    ]
-  },
   25: {
     title: "Lesson 25: Mrs. Smith's kitchen.",
     words: [
@@ -324,11 +332,11 @@ const nceWords = {
       { en: "kitchen", cn: "厨房" },
       { en: "refrigerator", cn: "电冰箱" },
       { en: "right", cn: "右边" },
-      { en: "electric", cn: "带电的" },
+      { en: "electric", cn: "带电的，可通电的" },
       { en: "left", cn: "左边" },
-      { en: "cooker", cn: "炉子" },
+      { en: "cooker", cn: "炉子，炊具" },
       { en: "middle", cn: "中间" },
-      { en: "of", cn: "(属于)...的" },
+      { en: "of   prep.(", cn: "属于)…的" },
       { en: "room", cn: "房间" },
       { en: "cup", cn: "杯子" }
     ]
@@ -337,7 +345,7 @@ const nceWords = {
     title: "Lesson 26: Where is it?",
     words: [
       { en: "where", cn: "在哪里" },
-      { en: "in", cn: "在...里" }
+      { en: "in", cn: "在…里" }
     ]
   },
   27: {
@@ -346,7 +354,7 @@ const nceWords = {
       { en: "living room", cn: "客厅" },
       { en: "near", cn: "靠近" },
       { en: "window", cn: "窗户" },
-      { en: "armchair", cn: "扶手椅" },
+      { en: "armchair", cn: "手扶椅" },
       { en: "door", cn: "门" },
       { en: "picture", cn: "图画" },
       { en: "wall", cn: "墙" }
@@ -355,7 +363,7 @@ const nceWords = {
   28: {
     title: "Lesson 28: Where are they?",
     words: [
-      { en: "trousers", cn: "长裤" }
+      { en: "trousers   n.〔", cn: "复数〕长裤" }
     ]
   },
   29: {
@@ -363,10 +371,10 @@ const nceWords = {
     words: [
       { en: "shut", cn: "关门" },
       { en: "bedroom", cn: "卧室" },
-      { en: "untidy", cn: "乱" },
-      { en: "must", cn: "必须" },
+      { en: "untidy", cn: "乱，不整齐" },
+      { en: "must", cn: "必须，应该" },
       { en: "open", cn: "打开" },
-      { en: "air", cn: "通风" },
+      { en: "air", cn: "使…通风，换换空气" },
       { en: "put", cn: "放置" },
       { en: "clothes", cn: "衣服" },
       { en: "wardrobe", cn: "大衣柜" },
@@ -377,11 +385,11 @@ const nceWords = {
   30: {
     title: "Lesson 30: What must I do?",
     words: [
-      { en: "empty", cn: "倒空" },
+      { en: "empty", cn: "倒空，使…变空" },
       { en: "read", cn: "读" },
-      { en: "sharpen", cn: "削尖" },
+      { en: "sharpen", cn: "削尖，使锋利" },
       { en: "put on", cn: "穿上" },
-      { en: "take off", cn: "脱下" },
+      { en: "take off", cn: "脱掉" },
       { en: "turn on", cn: "开(电灯)" },
       { en: "turn off", cn: "关(电灯)" }
     ]
@@ -390,13 +398,13 @@ const nceWords = {
     title: "Lesson 31: Where's Sally?",
     words: [
       { en: "garden", cn: "花园" },
-      { en: "under", cn: "在...之下" },
+      { en: "under", cn: "在…之下" },
       { en: "tree", cn: "树" },
-      { en: "climb", cn: "爬" },
+      { en: "climb", cn: "爬，攀登" },
       { en: "who", cn: "谁" },
       { en: "run", cn: "跑" },
-      { en: "grass", cn: "草" },
-      { en: "after", cn: "在...之后" },
+      { en: "grass", cn: "草，草地" },
+      { en: "after", cn: "在…之后" },
       { en: "cat", cn: "猫" }
     ]
   },
@@ -410,11 +418,11 @@ const nceWords = {
       { en: "bone", cn: "骨头" },
       { en: "clean", cn: "清洗" },
       { en: "tooth", cn: "牙齿" },
-      { en: "cook", cn: "做饭" },
+      { en: "cook", cn: "做(饭菜)" },
       { en: "milk", cn: "牛奶" },
-      { en: "meal", cn: "饭" },
+      { en: "meal", cn: "饭，一顿饭" },
       { en: "drink", cn: "喝" },
-      { en: "tap", cn: "水龙头" }
+      { en: "tap   n.(", cn: "水)龙头" }
     ]
   },
   33: {
@@ -425,10 +433,10 @@ const nceWords = {
       { en: "sky", cn: "天空" },
       { en: "sun", cn: "太阳" },
       { en: "shine", cn: "照耀" },
-      { en: "with", cn: "和...一起" },
-      { en: "family", cn: "家庭" },
-      { en: "walk", cn: "走路" },
-      { en: "over", cn: "跨过" },
+      { en: "with", cn: "和…在一起" },
+      { en: "family", cn: "家庭(成员)" },
+      { en: "walk", cn: "走路，步行" },
+      { en: "over", cn: "跨越，在…之上" },
       { en: "bridge", cn: "桥" },
       { en: "boat", cn: "船" },
       { en: "river", cn: "河" },
@@ -442,7 +450,7 @@ const nceWords = {
     words: [
       { en: "sleep", cn: "睡觉" },
       { en: "shave", cn: "刮脸" },
-      { en: "cry", cn: "哭" },
+      { en: "cry", cn: "哭，喊" },
       { en: "wash", cn: "洗" },
       { en: "wait", cn: "等" },
       { en: "jump", cn: "跳" }
@@ -454,7 +462,7 @@ const nceWords = {
       { en: "photograph", cn: "照片" },
       { en: "village", cn: "村庄" },
       { en: "valley", cn: "山谷" },
-      { en: "between", cn: "在...之间" },
+      { en: "between", cn: "在…之间" },
       { en: "hill", cn: "小山" },
       { en: "another", cn: "另一个" },
       { en: "wife", cn: "妻子" },
@@ -462,7 +470,8 @@ const nceWords = {
       { en: "bank", cn: "河岸" },
       { en: "water", cn: "水" },
       { en: "swim", cn: "游泳" },
-      { en: "building", cn: "大楼" },
+      { en: "across", cn: "横过" },
+      { en: "building", cn: "大楼，建筑物" },
       { en: "park", cn: "公园" },
       { en: "into", cn: "进入" }
     ]
@@ -470,7 +479,7 @@ const nceWords = {
   36: {
     title: "Lesson 36: Where...?",
     words: [
-      { en: "beside", cn: "在...旁边" },
+      { en: "beside", cn: "在…旁" },
       { en: "off", cn: "离开" }
     ]
   },
@@ -480,9 +489,9 @@ const nceWords = {
       { en: "work", cn: "工作" },
       { en: "hard", cn: "努力地" },
       { en: "make", cn: "做" },
-      { en: "bookcase", cn: "书橱" },
+      { en: "bookcase", cn: "书橱，书架" },
       { en: "hammer", cn: "锤子" },
-      { en: "paint", cn: "上漆" },
+      { en: "paint", cn: "上漆，涂" },
       { en: "pink", cn: "粉红色" },
       { en: "favourite", cn: "最喜欢的" }
     ]
@@ -492,15 +501,15 @@ const nceWords = {
     words: [
       { en: "homework", cn: "作业" },
       { en: "listen", cn: "听" },
-      { en: "dish", cn: "盘子" }
+      { en: "dish", cn: "盘子，碟子" }
     ]
   },
   39: {
     title: "Lesson 39: Don't drop it!",
     words: [
       { en: "front", cn: "前面" },
-      { en: "in front of", cn: "在...之前" },
-      { en: "careful", cn: "小心的" },
+      { en: "in front of", cn: "在…之前" },
+      { en: "careful", cn: "小心的，仔细的" },
       { en: "vase", cn: "花瓶" },
       { en: "drop", cn: "掉下" },
       { en: "flower", cn: "花" }
@@ -509,7 +518,7 @@ const nceWords = {
   40: {
     title: "Lesson 40: What are you going to do?",
     words: [
-      { en: "show", cn: "给...看" },
+      { en: "show", cn: "给…看" },
       { en: "send", cn: "送给" },
       { en: "take", cn: "带给" }
     ]
@@ -517,14 +526,14 @@ const nceWords = {
   41: {
     title: "Lesson 41: Penny's bag.",
     words: [
-      { en: "cheese", cn: "乳酪" },
+      { en: "cheese", cn: "乳酪，干酪" },
       { en: "bread", cn: "面包" },
       { en: "soap", cn: "肥皂" },
       { en: "chocolate", cn: "巧克力" },
       { en: "sugar", cn: "糖" },
       { en: "coffee", cn: "咖啡" },
       { en: "tea", cn: "茶" },
-      { en: "tobacco", cn: "烟草" }
+      { en: "tobacco", cn: "烟草，烟丝" }
     ]
   },
   42: {
@@ -540,11 +549,11 @@ const nceWords = {
     words: [
       { en: "of course", cn: "当然" },
       { en: "kettle", cn: "水壶" },
-      { en: "behind", cn: "在...后面" },
+      { en: "behind", cn: "在…后面" },
       { en: "teapot", cn: "茶壶" },
-      { en: "now", cn: "现在" },
+      { en: "now", cn: "现在，此刻" },
       { en: "find", cn: "找到" },
-      { en: "boil", cn: "沸腾" }
+      { en: "boil", cn: "沸腾，开" }
     ]
   },
   44: {
@@ -556,59 +565,59 @@ const nceWords = {
     title: "Lesson 45: The boss's letter.",
     words: [
       { en: "can", cn: "能够" },
-      { en: "boss", cn: "老板" },
-      { en: "minute", cn: "分钟" },
-      { en: "ask", cn: "请求" },
+      { en: "boss", cn: "老板，上司" },
+      { en: "minute", cn: "分(钟)" },
+      { en: "ask", cn: "请求，要求" },
       { en: "handwriting", cn: "书写" },
-      { en: "terrible", cn: "糟糕的" },
-      { en: "lift", cn: "拿起" },
-      { en: "cake", cn: "蛋糕" },
-      { en: "biscuit", cn: "饼干" }
+      { en: "terrible", cn: "糟糕的，可怕的" }
     ]
   },
   46: {
     title: "Lesson 46: Can you...?",
     words: [
+      { en: "lift", cn: "拿起，搬起，举起" },
+      { en: "cake", cn: "饼，蛋糕" },
+      { en: "biscuit", cn: "饼干" }
     ]
   },
   47: {
     title: "Lesson 47: A cup of coffee.",
     words: [
-      { en: "like", cn: "喜欢" },
-      { en: "want", cn: "想要" },
-      { en: "fresh", cn: "新鲜的" },
-      { en: "egg", cn: "鸡蛋" },
-      { en: "butter", cn: "黄油" },
-      { en: "pure", cn: "纯的" },
-      { en: "honey", cn: "蜂蜜" },
-      { en: "ripe", cn: "成熟的" },
-      { en: "banana", cn: "香蕉" },
-      { en: "jam", cn: "果酱" },
-      { en: "sweet", cn: "甜的" },
-      { en: "orange", cn: "橙子" },
-      { en: "Scotch whisky", cn: "苏格兰威士忌" },
-      { en: "choice", cn: "选择" },
-      { en: "apple", cn: "苹果" },
-      { en: "wine", cn: "酒" },
-      { en: "beer", cn: "啤酒" },
-      { en: "blackboard", cn: "黑板" }
+      { en: "like", cn: "喜欢，想要" },
+      { en: "want", cn: "想" }
     ]
   },
   48: {
     title: "Lesson 48: Do you like...?",
     words: [
+      { en: "fresh", cn: "新鲜的" },
+      { en: "egg", cn: "鸡蛋" },
+      { en: "butter", cn: "黄油" },
+      { en: "pure", cn: "纯净的" },
+      { en: "honey", cn: "蜂蜜" },
+      { en: "ripe", cn: "成熟的" },
+      { en: "banana", cn: "香蕉" },
+      { en: "jam", cn: "果酱" },
+      { en: "sweet", cn: "甜的" },
+      { en: "orange", cn: "橙" },
+      { en: "Scotch whisky", cn: "苏格兰威士忌" },
+      { en: "choice", cn: "上等的，精选的" },
+      { en: "apple", cn: "苹果" },
+      { en: "wine", cn: "酒，果酒" },
+      { en: "beer", cn: "啤酒" },
+      { en: "blackboard", cn: "黑板" }
     ]
   },
   49: {
     title: "Lesson 49: At the butcher's.",
     words: [
-      { en: "butcher", cn: "卖肉者" },
-      { en: "meat", cn: "肉" },
+      { en: "butcher", cn: "卖肉的" },
+      { en: "meat   n.(", cn: "食用)肉" },
       { en: "beef", cn: "牛肉" },
       { en: "lamb", cn: "羔羊肉" },
       { en: "husband", cn: "丈夫" },
       { en: "steak", cn: "牛排" },
-      { en: "mince", cn: "肉馅" },
+      { en: "mince", cn: "肉馅，绞肉" },
       { en: "chicken", cn: "鸡" },
       { en: "tell", cn: "告诉" },
       { en: "truth", cn: "实情" },
@@ -616,7 +625,7 @@ const nceWords = {
     ]
   },
   50: {
-    title: "Lesson 50: He likes...",
+    title: "Lesson 50: He likes... / He doesn't like...",
     words: [
       { en: "tomato", cn: "西红柿" },
       { en: "potato", cn: "土豆" },
@@ -630,7 +639,7 @@ const nceWords = {
     ]
   },
   51: {
-    title: "Lesson 51: A pleasant climate.",
+    title: "Lesson 51: A pleasant climate",
     words: [
       { en: "Greece", cn: "希腊" },
       { en: "climate", cn: "气候" },
@@ -646,29 +655,40 @@ const nceWords = {
       { en: "autumn", cn: "秋天" },
       { en: "winter", cn: "冬天" },
       { en: "snow", cn: "下雪" },
-      { en: "January", cn: "一月" },
-      { en: "February", cn: "二月" },
-      { en: "March", cn: "三月" },
-      { en: "April", cn: "四月" },
-      { en: "May", cn: "五月" },
-      { en: "June", cn: "六月" },
-      { en: "July", cn: "七月" },
-      { en: "August", cn: "八月" },
-      { en: "September", cn: "九月" },
-      { en: "October", cn: "十月" },
-      { en: "November", cn: "十一月" },
-      { en: "December", cn: "十二月" }
+      { en: "January   n.1", cn: "月" },
+      { en: "February   n.2", cn: "月" },
+      { en: "March   n.3", cn: "月" },
+      { en: "April   n.4", cn: "月" },
+      { en: "May   n.5", cn: "月" },
+      { en: "June   n.6", cn: "月" },
+      { en: "July   n.7", cn: "月" },
+      { en: "August   n.8", cn: "月" },
+      { en: "September   n.9", cn: "月" },
+      { en: "October   n.10", cn: "月" },
+      { en: "November   n.11", cn: "月" },
+      { en: "December   n.12", cn: "月" }
     ]
   },
   52: {
     title: "Lesson 52: What nationality are they?",
     words: [
+      { en: "the U.S.", cn: "美国" },
+      { en: "Brazil", cn: "巴西" },
+      { en: "Holland", cn: "荷兰" },
+      { en: "England", cn: "英国" },
+      { en: "France", cn: "法国" },
+      { en: "Germany", cn: "德国" },
+      { en: "Italy", cn: "意大利" },
+      { en: "Norway", cn: "挪威" },
+      { en: "Russia", cn: "俄罗斯" },
+      { en: "Spain", cn: "西班牙" },
+      { en: "Sweden", cn: "瑞典" }
     ]
   },
   53: {
-    title: "Lesson 53: An interesting climate.",
+    title: "Lesson 53: An interesting climate",
     words: [
-      { en: "mild", cn: "温和的" },
+      { en: "mild", cn: "温和的，温暖的" },
       { en: "always", cn: "总是" },
       { en: "north", cn: "北方" },
       { en: "east", cn: "东方" },
@@ -680,9 +700,9 @@ const nceWords = {
       { en: "night", cn: "夜晚" },
       { en: "rise", cn: "升起" },
       { en: "early", cn: "早" },
-      { en: "set", cn: "(日、月)落" },
-      { en: "late", cn: "晚" },
-      { en: "interesting", cn: "有趣的" },
+      { en: "set   v.(", cn: "太阳)落下去" },
+      { en: "late", cn: "晚，迟" },
+      { en: "interesting", cn: "有趣的，有意思的" },
       { en: "subject", cn: "话题" },
       { en: "conversation", cn: "谈话" }
     ]
@@ -690,14 +710,35 @@ const nceWords = {
   54: {
     title: "Lesson 54: What nationality are they?",
     words: [
+      { en: "Australia", cn: "澳大利亚" },
+      { en: "Australian", cn: "澳大利亚人" },
+      { en: "Austria", cn: "奥地利" },
+      { en: "Austrian", cn: "奥地利人" },
+      { en: "Canada", cn: "加拿大" },
+      { en: "Canadian", cn: "加拿大人" },
+      { en: "China", cn: "中国" },
+      { en: "Finland", cn: "芬兰" },
+      { en: "Finnish", cn: "芬兰人" },
+      { en: "India", cn: "印度" },
+      { en: "Indian", cn: "印度人" },
+      { en: "Japan", cn: "日本" },
+      { en: "Nigeria", cn: "尼日利亚" },
+      { en: "Nigerian", cn: "尼日利亚人" },
+      { en: "Turkey", cn: "土耳其" },
+      { en: "Turkish", cn: "土耳其人" },
+      { en: "Korea", cn: "韩国" },
+      { en: "Polish", cn: "波兰人" },
+      { en: "Poland", cn: "波兰" },
+      { en: "Thai", cn: "泰国人" },
+      { en: "Thailand", cn: "泰国" }
     ]
   },
   55: {
-    title: "Lesson 55: The Sawyer family.",
+    title: "Lesson 55: The Sawyer family",
     words: [
-      { en: "live", cn: "居住" },
-      { en: "stay", cn: "呆在" },
-      { en: "home", cn: "家" },
+      { en: "live", cn: "住，生活" },
+      { en: "stay", cn: "呆在，停留" },
+      { en: "home", cn: "家 ad.在家，到家" },
       { en: "housework", cn: "家务" },
       { en: "lunch", cn: "午饭" },
       { en: "afternoon", cn: "下午" },
@@ -714,11 +755,11 @@ const nceWords = {
     ]
   },
   57: {
-    title: "Lesson 57: An unusual day.",
+    title: "Lesson 57: An unusual day",
     words: [
       { en: "o'clock", cn: "点钟" },
       { en: "shop", cn: "商店" },
-      { en: "moment", cn: "片刻" }
+      { en: "moment", cn: "片刻，瞬间" }
     ]
   },
   58: {
@@ -732,11 +773,11 @@ const nceWords = {
       { en: "envelope", cn: "信封" },
       { en: "writing paper", cn: "信纸" },
       { en: "shop assistant", cn: "售货员" },
-      { en: "size", cn: "尺寸" },
+      { en: "size", cn: "尺寸，尺码，大小" },
       { en: "pad", cn: "信笺簿" },
       { en: "glue", cn: "胶水" },
       { en: "chalk", cn: "粉笔" },
-      { en: "change", cn: "零钱" }
+      { en: "change", cn: "零钱，找给的钱" }
     ]
   },
   60: {
@@ -753,12 +794,23 @@ const nceWords = {
       { en: "call", cn: "叫，请" },
       { en: "doctor", cn: "医生" },
       { en: "telephone", cn: "电话" },
-      { en: "remember", cn: "记得" },
+      { en: "remember", cn: "记得，记住" },
       { en: "mouth", cn: "嘴" },
       { en: "tongue", cn: "舌头" },
       { en: "bad", cn: "坏的，严重的" },
       { en: "cold", cn: "感冒" },
-      { en: "news", cn: "消息" }
+      { en: "news", cn: "消息" },
+      { en: "headache", cn: "头痛" },
+      { en: "aspirin", cn: "阿斯匹林" },
+      { en: "earache", cn: "耳痛" },
+      { en: "toothache", cn: "牙痛" },
+      { en: "dentist", cn: "牙医" },
+      { en: "stomach ache", cn: "胃痛" },
+      { en: "medicine", cn: "药" },
+      { en: "temperature", cn: "温度" },
+      { en: "flu", cn: "流行性感冒" },
+      { en: "measles", cn: "麻疹" },
+      { en: "mumps", cn: "腮腺炎" }
     ]
   },
   62: {
@@ -769,7 +821,7 @@ const nceWords = {
   63: {
     title: "Lesson 63: Thank you, doctor.",
     words: [
-      { en: "better", cn: "更好" },
+      { en: "better", cn: "形容词well的比较级" },
       { en: "certainly", cn: "当然" },
       { en: "get up", cn: "起床" },
       { en: "yet", cn: "还，仍" },
@@ -779,10 +831,17 @@ const nceWords = {
     ]
   },
   64: {
-    title: "Lesson 64: Don't... You mustn't...",
+    title: "Lesson 64: Don't...!",
     words: [
       { en: "play", cn: "玩" },
-      { en: "match", cn: "火柴" }
+      { en: "match", cn: "火柴" },
+      { en: "talk", cn: "谈话" },
+      { en: "library", cn: "图书馆" },
+      { en: "drive", cn: "开车" },
+      { en: "so", cn: "如此地" },
+      { en: "quickly", cn: "快地" },
+      { en: "lean out of", cn: "身体探出" },
+      { en: "break", cn: "打破" }
     ]
   },
   65: {
@@ -792,18 +851,18 @@ const nceWords = {
       { en: "key", cn: "钥匙" },
       { en: "baby", cn: "婴儿" },
       { en: "hear", cn: "听见" },
-      { en: "enjoy", cn: "享受" },
+      { en: "enjoy", cn: "玩得快活" },
       { en: "yourself", cn: "你自己" },
-      { en: "ourselves", cn: "我们自己" },
-      { en: "themselves", cn: "他们自己" },
-      { en: "himself", cn: "他自己" },
-      { en: "herself", cn: "她自己" }
+      { en: "ourselves", cn: "我们自己" }
     ]
   },
   66: {
     title: "Lesson 66: What's the time?",
     words: [
-      { en: "myself", cn: "我自己" }
+      { en: "myself", cn: "我自己" },
+      { en: "themselves", cn: "他们自己" },
+      { en: "himself", cn: "他自己" },
+      { en: "herself", cn: "她自己" }
     ]
   },
   67: {
@@ -815,7 +874,7 @@ const nceWords = {
       { en: "Tuesday", cn: "星期二" },
       { en: "Wednesday", cn: "星期三" },
       { en: "Thursday", cn: "星期四" },
-      { en: "keep", cn: "保持" },
+      { en: "keep   v.(", cn: "身体健康)处于(状况)" },
       { en: "spend", cn: "度过" },
       { en: "weekend", cn: "周末" },
       { en: "Friday", cn: "星期五" },
@@ -828,6 +887,10 @@ const nceWords = {
   68: {
     title: "Lesson 68: What's the time?",
     words: [
+      { en: "church", cn: "教堂" },
+      { en: "dairy", cn: "乳品店" },
+      { en: "baker", cn: "面包师傅" },
+      { en: "grocer", cn: "食品杂货商" }
     ]
   },
   69: {
@@ -842,26 +905,24 @@ const nceWords = {
       { en: "just", cn: "正好，恰好" },
       { en: "finish", cn: "结尾，结束" },
       { en: "winner", cn: "获胜者" },
-      { en: "behind", cn: "在...之后" },
+      { en: "behind   prop.", cn: "在…之后" },
       { en: "way", cn: "路途" }
     ]
   },
   70: {
-    title: "Lesson 70: When were they there?",
+    title: "Lesson 70: When did you...?",
     words: [
-      { en: "stationers", cn: "文具店" },
-      { en: "Danish", cn: "丹麦的" }
     ]
   },
   71: {
     title: "Lesson 71: He's awful!",
     words: [
-      { en: "awful", cn: "让人讨厌的" },
+      { en: "awful", cn: "让人讨厌的，坏的" },
       { en: "telephone", cn: "打电话" },
       { en: "time", cn: "次(数)" },
       { en: "answer", cn: "接(电话)" },
       { en: "last", cn: "最后的，前一次的" },
-      { en: "phone", cn: "电话" },
+      { en: "phone", cn: "电话(=telephone)" },
       { en: "again", cn: "又一次地" },
       { en: "say", cn: "说" }
     ]
@@ -874,17 +935,17 @@ const nceWords = {
   73: {
     title: "Lesson 73: The way to King Street",
     words: [
-      { en: "week", cn: "周，星期" },
+      { en: "week", cn: "周" },
       { en: "London", cn: "伦敦" },
       { en: "suddenly", cn: "突然地" },
-      { en: "bus stop", cn: "公共汽车站" },
+      { en: "bus stop", cn: "公共汽车车站" },
       { en: "smile", cn: "微笑" },
       { en: "pleasantly", cn: "愉快地" },
       { en: "understand", cn: "懂，明白" },
       { en: "speak", cn: "讲，说" },
       { en: "hand", cn: "手" },
       { en: "pocket", cn: "衣袋" },
-      { en: "phrasebook", cn: "短语手册" },
+      { en: "phrasebook", cn: "短语手册，常用语手册" },
       { en: "phrase", cn: "短语" },
       { en: "slowly", cn: "缓慢地" }
     ]
@@ -896,15 +957,18 @@ const nceWords = {
       { en: "cut", cn: "割，切" },
       { en: "thirstily", cn: "口渴地" },
       { en: "go", cn: "走" },
-      { en: "greet", cn: "问候" }
+      { en: "greet", cn: "问候，找招呼" }
     ]
   },
   75: {
     title: "Lesson 75: Uncomfortable shoes",
     words: [
-      { en: "shoe", cn: "鞋子" },
-      { en: "fashion", cn: "流行式样" },
-      { en: "uncomfortable", cn: "不舒服的" }
+      { en: "ago", cn: "以前" },
+      { en: "buy", cn: "买" },
+      { en: "pair", cn: "双，对" },
+      { en: "fashion   n.(", cn: "服装的)流行式样" },
+      { en: "uncomfortable", cn: "不舒服的" },
+      { en: "wear", cn: "穿着" }
     ]
   },
   76: {
@@ -916,8 +980,8 @@ const nceWords = {
     title: "Lesson 77: Terrible toothache",
     words: [
       { en: "appointment", cn: "约会，预约" },
-      { en: "urgent", cn: "紧急的" },
-      { en: "till", cn: "直到...为止" }
+      { en: "urgent", cn: "紧急的，急迫的" },
+      { en: "till", cn: "直到…为止" }
     ]
   },
   78: {
@@ -940,11 +1004,11 @@ const nceWords = {
   80: {
     title: "Lesson 80: I must go to the...",
     words: [
-      { en: "groceries", cn: "食品，杂货" },
+      { en: "groceries", cn: "食品杂货" },
       { en: "fruit", cn: "水果" },
       { en: "stationery", cn: "文具" },
       { en: "newsagent", cn: "报刊零售人" },
-      { en: "chemist", cn: "化工商，药剂师" }
+      { en: "chemist", cn: "化剂师，化学家" }
     ]
   },
   81: {
@@ -952,14 +1016,14 @@ const nceWords = {
     words: [
       { en: "bath", cn: "洗澡" },
       { en: "nearly", cn: "几乎，将近" },
-      { en: "ready", cn: "准备好的" },
+      { en: "ready", cn: "准备好的，完好的" },
       { en: "dinner", cn: "正餐，晚餐" },
       { en: "restaurant", cn: "饭馆，餐馆" },
       { en: "roast", cn: "烤的" }
     ]
   },
   82: {
-    title: "Lesson 82: I had...",
+    title: "Lesson 82: I ate... / He ate...",
     words: [
       { en: "breakfast", cn: "早饭" },
       { en: "haircut", cn: "理发" },
@@ -971,7 +1035,7 @@ const nceWords = {
     title: "Lesson 83: Going on holiday",
     words: [
       { en: "mess", cn: "杂乱，凌乱" },
-      { en: "pack", cn: "包装，打包" },
+      { en: "pack", cn: "包装，打包，装箱" },
       { en: "suitcase", cn: "手提箱" },
       { en: "leave", cn: "离开" },
       { en: "already", cn: "已经" }
@@ -1006,7 +1070,7 @@ const nceWords = {
       { en: "bring", cn: "带来，送来" },
       { en: "garage", cn: "车库，汽车修理厂" },
       { en: "crash", cn: "碰撞" },
-      { en: "lamp-post", cn: "碰柱，街灯柱" },
+      { en: "lamp-post", cn: "灯杆" },
       { en: "repair", cn: "修理" },
       { en: "try", cn: "努力，设法" }
     ]
@@ -1019,8 +1083,8 @@ const nceWords = {
   89: {
     title: "Lesson 89: For sale",
     words: [
-      { en: "believe", cn: "相信" },
-      { en: "may", cn: "(用于请求许可)可以" },
+      { en: "believe", cn: "相信，认为" },
+      { en: "may   (", cn: "用于请求许可)可以" },
       { en: "how long", cn: "多长" },
       { en: "since", cn: "自从" },
       { en: "why", cn: "为什么" },
@@ -1029,7 +1093,7 @@ const nceWords = {
       { en: "retire", cn: "退休" },
       { en: "cost", cn: "花费" },
       { en: "pound", cn: "英镑" },
-      { en: "worth", cn: "值...钱" },
+      { en: "worth", cn: "值…钱" },
       { en: "penny", cn: "便士" }
     ]
   },
@@ -1051,7 +1115,7 @@ const nceWords = {
     ]
   },
   92: {
-    title: "Lesson 92: When will...?",
+    title: "Lesson 92: When did you...?",
     words: [
     ]
   },
@@ -1086,9 +1150,9 @@ const nceWords = {
       { en: "return", cn: "往返" },
       { en: "train", cn: "火车" },
       { en: "platform", cn: "站台" },
-      { en: "plenty", cn: "丰富，大量" },
+      { en: "plenty", cn: "大量" },
       { en: "bar", cn: "酒吧" },
-      { en: "station", cn: "车站" },
+      { en: "station", cn: "车站，火车站" },
       { en: "catch", cn: "赶上" },
       { en: "miss", cn: "错过" }
     ]
@@ -1107,7 +1171,7 @@ const nceWords = {
       { en: "label", cn: "标签" },
       { en: "handle", cn: "提手，把手" },
       { en: "address", cn: "地址" },
-      { en: "pence", cn: "pence(penny的复数)" },
+      { en: "pence   n.penny", cn: "的复数形式" },
       { en: "belong", cn: "属于" }
     ]
   },
@@ -1120,16 +1184,16 @@ const nceWords = {
     title: "Lesson 99: Ow!",
     words: [
       { en: "ow", cn: "哎哟" },
-      { en: "slip", cn: "滑倒" },
+      { en: "slip", cn: "滑倒，滑了一脚" },
       { en: "fall", cn: "落下，跌倒" },
       { en: "downstairs", cn: "下楼" },
-      { en: "hurt", cn: "伤，伤害" },
+      { en: "hurt", cn: "伤，伤害，疼痛" },
       { en: "back", cn: "背" },
       { en: "stand up", cn: "起立，站起来" },
       { en: "help", cn: "帮助" },
       { en: "at once", cn: "立即" },
       { en: "sure", cn: "一定的，确信的" },
-      { en: "X-ray", cn: "X光透视" }
+      { en: "X-ray   n.X", cn: "光透视" }
     ]
   },
   100: {
@@ -1140,17 +1204,17 @@ const nceWords = {
   101: {
     title: "Lesson 101: A card from Jimmy",
     words: [
-      { en: "Scotland", cn: "苏格兰" },
+      { en: "Scotland", cn: "苏格兰(英国)" },
       { en: "card", cn: "明信片" },
       { en: "youth", cn: "青年" },
-      { en: "hostel", cn: "招待所" },
+      { en: "hostel", cn: "招待所，旅馆" },
       { en: "association", cn: "协会" },
       { en: "soon", cn: "不久" },
       { en: "write", cn: "写" }
     ]
   },
   102: {
-    title: "Lesson 102: He says he.../She says she...",
+    title: "Lesson 102: He says he...",
     words: [
     ]
   },
@@ -1162,16 +1226,16 @@ const nceWords = {
       { en: "mathematics", cn: "数学" },
       { en: "question", cn: "问题" },
       { en: "easy", cn: "容易的" },
-      { en: "enough", cn: "足够的" },
+      { en: "enough", cn: "足够地" },
       { en: "paper", cn: "考卷" },
-      { en: "fail", cn: "不及格" },
+      { en: "fail", cn: "未及格，失败" },
       { en: "answer", cn: "回答" },
       { en: "mark", cn: "分数" },
       { en: "rest", cn: "其他的东西" },
       { en: "difficult", cn: "困难的" },
       { en: "hate", cn: "讨厌" },
       { en: "low", cn: "低的" },
-      { en: "cheer", cn: "振呼，鼓励" },
+      { en: "cheer", cn: "振作，振奋" },
       { en: "guy", cn: "家伙，人" },
       { en: "top", cn: "上方，顶部" }
     ]
@@ -1179,27 +1243,42 @@ const nceWords = {
   104: {
     title: "Lesson 104: Too, very, enough",
     words: [
+      { en: "clever", cn: "聪明的" },
+      { en: "stupid", cn: "笨的" },
+      { en: "cheap", cn: "便宜的" },
+      { en: "expensive", cn: "贵的" },
+      { en: "fresh", cn: "新鲜的" },
+      { en: "stale", cn: "变馊的" },
+      { en: "low", cn: "低的，矮的" },
+      { en: "loud", cn: "大声的" },
+      { en: "high", cn: "高的" },
+      { en: "hard", cn: "硬的" },
+      { en: "sweet", cn: "甜的" },
+      { en: "soft", cn: "软的" },
+      { en: "sour", cn: "酸的" }
     ]
   },
   105: {
     title: "Lesson 105: Full of mistakes",
     words: [
       { en: "spell", cn: "拼写" },
-      { en: "intelligent", cn: "聪明的" },
+      { en: "intelligent", cn: "聪明的，有智慧的" },
       { en: "mistake", cn: "错误" },
       { en: "present", cn: "礼物" },
       { en: "dictionary", cn: "词典" }
     ]
   },
   106: {
-    title: "Lesson 106: I want you/him/her/them to...",
+    title: "Lesson 106: I want you to...",
     words: [
+      { en: "carry", cn: "携带" },
+      { en: "correct", cn: "改正，纠正" }
     ]
   },
   107: {
-    title: "Lesson 107: It's too small.",
+    title: "Lesson 107: It's too small",
     words: [
-      { en: "madam", cn: "夫人，女士" },
+      { en: "madam", cn: "夫人，女士(对妇女的尊称)" },
       { en: "as well", cn: "同样" },
       { en: "suit", cn: "适于" },
       { en: "pretty", cn: "漂亮的" }
@@ -1214,25 +1293,30 @@ const nceWords = {
     title: "Lesson 109: A good idea",
     words: [
       { en: "idea", cn: "主意" },
-      { en: "a little", cn: "少许" },
+      { en: "a little", cn: "少许(用于不可数名词之前)" },
       { en: "teaspoonful", cn: "一满茶匙" },
-      { en: "less", cn: "较少的" },
-      { en: "a few", cn: "几个" },
+      { en: "less   a.(little", cn: "的比较级)校少的，更小的" },
+      { en: "a few", cn: "几个(用于可数名词之前)" },
       { en: "pity", cn: "遗憾" },
       { en: "instead", cn: "代替" },
-      { en: "advice", cn: "建议" }
+      { en: "advice", cn: "建议，忠告" }
     ]
   },
   110: {
     title: "Lesson 110: How do they compare?",
     words: [
+      { en: "most   a.(many,much", cn: "的最高级)最多的" },
+      { en: "least   a.(little", cn: "的最高级)最小的，最少的" },
+      { en: "best   a.(good", cn: "的最高级)最好的" },
+      { en: "worse   a.(bad", cn: "的比较级)更坏的" },
+      { en: "worst   a.(bad", cn: "的最高级)最坏的" }
     ]
   },
   111: {
     title: "Lesson 111: The most expensive model",
     words: [
-      { en: "model", cn: "型号，样式" },
-      { en: "afford", cn: "付得起" },
+      { en: "model", cn: "型号，式样" },
+      { en: "afford", cn: "付得起(钱)" },
       { en: "deposit", cn: "预付定金" },
       { en: "instalment", cn: "分期付款" },
       { en: "price", cn: "价格" },
@@ -1249,25 +1333,25 @@ const nceWords = {
     words: [
       { en: "conductor", cn: "售票员" },
       { en: "fare", cn: "车费，车票" },
-      { en: "change", cn: "找零" },
+      { en: "change", cn: "兑换(钱)" },
       { en: "note", cn: "纸币" },
       { en: "passenger", cn: "乘客" },
       { en: "none", cn: "没有任何东西" },
       { en: "neither", cn: "也不" },
       { en: "get off", cn: "下车" },
       { en: "tramp", cn: "流浪汉" },
-      { en: "except", cn: "除了" }
+      { en: "except", cn: "除…外" }
     ]
   },
   114: {
-    title: "Lesson 114: I've got none.",
+    title: "Lesson 114: I've got none",
     words: [
     ]
   },
   115: {
     title: "Lesson 115: Knock, knock!",
     words: [
-      { en: "anyone", cn: "任何人" },
+      { en: "anyone pron.(", cn: "用于疑问句，否定式)任何人" },
       { en: "knock", cn: "敲，打" },
       { en: "everything", cn: "一切事物" },
       { en: "quiet", cn: "宁静的，安静的" },
@@ -1276,28 +1360,31 @@ const nceWords = {
       { en: "anything", cn: "任何东西" },
       { en: "nothing", cn: "什么也没有" },
       { en: "lemonade", cn: "柠檬水" },
-      { en: "joke", cn: "玩笑" }
+      { en: "joke", cn: "开玩笑" }
     ]
   },
   116: {
     title: "Lesson 116: Every, no, any and some",
     words: [
+      { en: "asleep", cn: "睡觉，睡着(用作表语)" },
+      { en: "glasses", cn: "眼镜" }
     ]
   },
   117: {
     title: "Lesson 117: Tommy's breakfast",
     words: [
-      { en: "dining room", cn: "餐厅" },
+      { en: "dining room", cn: "饭厅" },
       { en: "coin", cn: "硬币" },
       { en: "mouth", cn: "嘴" },
       { en: "swallow", cn: "吞下" },
       { en: "later", cn: "后来" },
-      { en: "toilet", cn: "厕所" }
+      { en: "toilet", cn: "厕所，盥洗室" }
     ]
   },
   118: {
     title: "Lesson 118: What were you doing?",
     words: [
+      { en: "ring", cn: "响" }
     ]
   },
   119: {
@@ -1309,13 +1396,14 @@ const nceWords = {
       { en: "enter", cn: "进入" },
       { en: "dark", cn: "黑暗的" },
       { en: "torch", cn: "手电筒" },
-      { en: "voice", cn: "说话声" },
+      { en: "voice   n.(", cn: "说话的)声音" },
       { en: "parrot", cn: "鹦鹉" }
     ]
   },
   120: {
-    title: "Lesson 120: It had already happened.",
+    title: "Lesson 120: It had already happened",
     words: [
+      { en: "exercise book", cn: "练习本" }
     ]
   },
   121: {
@@ -1324,32 +1412,34 @@ const nceWords = {
       { en: "customer", cn: "顾客" },
       { en: "forget", cn: "忘记" },
       { en: "manager", cn: "经理" },
-      { en: "serve", cn: "照应，服务" },
+      { en: "serve", cn: "照应，服务，接待" },
       { en: "counter", cn: "柜台" },
-      { en: "recognize", cn: "认出" }
+      { en: "recognize", cn: "认识" }
     ]
   },
   122: {
     title: "Lesson 122: Who (whom), which and that",
     words: [
+      { en: "road", cn: "路" }
     ]
   },
   123: {
     title: "Lesson 123: A trip to Australia",
     words: [
-      { en: "during", cn: "在...期间" },
+      { en: "during", cn: "在…期间" },
       { en: "trip", cn: "旅行" },
       { en: "travel", cn: "旅行" },
       { en: "offer", cn: "提供" },
       { en: "job", cn: "工作" },
       { en: "guess", cn: "猜" },
-      { en: "grow", cn: "长，让...生长" },
-      { en: "beard", cn: "胡子" }
+      { en: "grow", cn: "长，让…生长" },
+      { en: "beard   n.(", cn: "下巴上的)胡子，络腮胡子" }
     ]
   },
   124: {
     title: "Lesson 124: (Who) / (whom), (which) and (that)",
     words: [
+      { en: "kitten", cn: "小猫" }
     ]
   },
   125: {
@@ -1357,15 +1447,16 @@ const nceWords = {
     words: [
       { en: "water", cn: "浇水" },
       { en: "terribly", cn: "非常" },
-      { en: "dry", cn: "干燥的" },
+      { en: "dry", cn: "干燥的，干的" },
       { en: "nuisance", cn: "讨厌的东西或人" },
-      { en: "mean", cn: "意味着，用意" },
+      { en: "mean", cn: "意味着，意思是" },
       { en: "surprise", cn: "惊奇，意外的事" }
     ]
   },
   126: {
     title: "Lesson 126: Have to and do not need to",
     words: [
+      { en: "immediately", cn: "立即地" }
     ]
   },
   127: {
@@ -1375,7 +1466,7 @@ const nceWords = {
       { en: "actress", cn: "女演员" },
       { en: "at least", cn: "至少" },
       { en: "actor", cn: "男演员" },
-      { en: "read", cn: "读" }
+      { en: "read", cn: "通过阅读得知" }
     ]
   },
   128: {
@@ -1390,12 +1481,12 @@ const nceWords = {
       { en: "track", cn: "跑道" },
       { en: "mile", cn: "英里" },
       { en: "overtake", cn: "从后面超越，超车" },
-      { en: "speed limit", cn: "限速" },
-      { en: "dream", cn: "做梦" },
+      { en: "speed", cn: "限速" },
+      { en: "dream", cn: "做梦，思想不集中" },
       { en: "sign", cn: "标记，牌子" },
       { en: "driving licence", cn: "驾驶执照" },
-      { en: "charge", cn: "罚款，收费" },
-      { en: "darling", cn: "亲爱的(用作称呼)" }
+      { en: "charge", cn: "罚款" },
+      { en: "darling", cn: "亲爱的(用作表示称呼)" }
     ]
   },
   130: {
@@ -1407,12 +1498,12 @@ const nceWords = {
     title: "Lesson 131: Don't be so sure!",
     words: [
       { en: "Egypt", cn: "埃及" },
-      { en: "abroad", cn: "在国外" },
+      { en: "abroad", cn: "国外" },
       { en: "worry", cn: "担忧" }
     ]
   },
   132: {
-    title: "Lesson 132: He may be...",
+    title: "Lesson 132: He may be... / He may have been...",
     words: [
     ]
   },
@@ -1451,8 +1542,8 @@ const nceWords = {
       { en: "pool", cn: "赌注" },
       { en: "win", cn: "赢" },
       { en: "world", cn: "世界" },
-      { en: "poor", cn: "可怜的" },
-      { en: "depend", cn: "依靠" }
+      { en: "poor", cn: "贫穷的" },
+      { en: "depend", cn: "依靠(on)" }
     ]
   },
   138: {
@@ -1464,7 +1555,8 @@ const nceWords = {
     title: "Lesson 139: Is that you, John?",
     words: [
       { en: "extra", cn: "额外的" },
-      { en: "overseas", cn: "海外的" },
+      { en: "engineer", cn: "工程师" },
+      { en: "overseas", cn: "海外的，国外的" },
       { en: "engineering", cn: "工程" },
       { en: "company", cn: "公司" },
       { en: "line", cn: "线路" }
@@ -1481,20 +1573,23 @@ const nceWords = {
       { en: "excited", cn: "兴奋的" },
       { en: "get on", cn: "登上" },
       { en: "middle-aged", cn: "中年的" },
-      { en: "opposite", cn: "在...对面" },
+      { en: "opposite", cn: "在…对面" },
       { en: "curiously", cn: "好奇地" },
       { en: "funny", cn: "可笑的，滑稽的" },
       { en: "powder", cn: "香粉" },
-      { en: "compact", cn: "带镜香粉盒" },
+      { en: "compact", cn: "带镜的化妆盒" },
       { en: "kindly", cn: "和蔼地" },
       { en: "ugly", cn: "丑陋的" },
-      { en: "amused", cn: "有趣的，逗人笑的" },
-      { en: "smile", cn: "微笑" }
+      { en: "amused", cn: "有趣的" },
+      { en: "smile", cn: "微笑" },
+      { en: "embarrassed", cn: "尴尬的，窘迫的" }
     ]
   },
   142: {
-    title: "Lesson 142: Someone invited Sally to a party.",
+    title: "Lesson 142: Someone invited...",
     words: [
+      { en: "worried", cn: "担心，担忧" },
+      { en: "regularly", cn: "经常地，定期地" }
     ]
   },
   143: {
@@ -1506,27 +1601,27 @@ const nceWords = {
       { en: "hundred", cn: "百" },
       { en: "city", cn: "城市" },
       { en: "through", cn: "穿过" },
-      { en: "visitor", cn: "参观者，游客" },
-      { en: "tidy", cn: "整洁的" },
+      { en: "visitor", cn: "参观者，游客，来访者" },
+      { en: "tidy", cn: "整齐的" },
       { en: "litter", cn: "杂乱的东西" },
       { en: "litter basket", cn: "废物筐" },
       { en: "place", cn: "放" },
-      { en: "throw", cn: "扔" },
+      { en: "throw", cn: "扔，抛" },
       { en: "rubbish", cn: "垃圾" },
       { en: "count", cn: "数，点" },
       { en: "cover", cn: "覆盖" },
       { en: "piece", cn: "碎片" },
       { en: "tyre", cn: "轮胎" },
       { en: "rusty", cn: "生锈的" },
-      { en: "among", cn: "在...之间" },
+      { en: "among", cn: "在…之间" },
       { en: "prosecute", cn: "依法处置" }
     ]
   },
   144: {
-    title: "Lesson 144: He hasn't been served yet.",
+    title: "Lesson 144: He hasn't been served yet",
     words: [
     ]
-  },
+  }
 };
 
 // 获取所有单词的平铺列表（去重）
@@ -1563,9 +1658,4 @@ function getWordsByLessonRange(from, to) {
     }
   }
   return result;
-}
-
-// 支持CommonJS/ESM导出，兼容前端
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { nceWords, getAllWords, getWordsByLessonRange };
 }
