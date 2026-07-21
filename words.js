@@ -85,14 +85,6 @@ const nceWords = {
       { en: "English", cn: "英国的" },
       { en: "American", cn: "美国的" },
       { en: "Italian", cn: "意大利的" },
-      { en: "Volvo", cn: "沃尔沃" },
-      { en: "Peugeot", cn: "标致" },
-      { en: "Mercedes", cn: "梅赛德斯" },
-      { en: "Toyota", cn: "丰田" },
-      { en: "Daewoo", cn: "大宇" },
-      { en: "Mini", cn: "迷你" },
-      { en: "Ford", cn: "福特" },
-      { en: "Fiat", cn: "菲亚特" }
     ]
   },
   7: {
