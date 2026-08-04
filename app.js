@@ -27,6 +27,8 @@
   const highlightStatus = $('#highlightStatus');
   const highlightIcon = $('#highlightIcon');
   const highlightToggleBar = $('#highlightToggleBar');
+  let cloudSync = null;
+  let activeStorageKey = '';
 
   // --- State ---
   let currentMode = 'letters'; // 'guide' | 'letters' | 'speed' | 'words' | 'favorites'
@@ -68,10 +70,11 @@
   // --- Favorites (localStorage) ---
   // Each fav: { en, cn, lesson, lessonTitle, correctStreak }
   const FAV_KEY = 'typing_master_favorites';
+  let favoritesStorageKey = FAV_KEY;
 
   function loadFavorites() {
     try {
-      const favs = JSON.parse(localStorage.getItem(FAV_KEY)) || [];
+      const favs = JSON.parse(localStorage.getItem(favoritesStorageKey)) || [];
       return favs.map(f => ({
         ...f,
         correctStreak: f.correctStreak || 0,
@@ -82,8 +85,9 @@
   }
 
   function saveFavorites(favs) {
-    localStorage.setItem(FAV_KEY, JSON.stringify(favs));
+    localStorage.setItem(favoritesStorageKey, JSON.stringify(favs));
     updateFavBadge();
+    if (cloudSync) cloudSync.queueSync();
   }
 
   function addToFavorites(en, cn, lesson, lessonTitle) {
@@ -196,6 +200,7 @@
       const minutes = (Date.now() - startTime) / 60000;
       if (minutes > 0.05) wpmEl.textContent = Math.round((charCount / 5) / minutes);
     }
+    if (cloudSync) cloudSync.queueSync();
   }
 
   // --- Keyboard Highlight ---
@@ -891,6 +896,7 @@
       $$('.lesson-btn').forEach(btn => {
         btn.addEventListener('click', () => {
           selectedLesson = parseInt(btn.dataset.lesson);
+          if (cloudSync) cloudSync.queueSync();
           $$('.lesson-btn').forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
           if (isPlaying) startGame();
@@ -908,6 +914,41 @@
     const defaultStart = (defaultGroupNum - 1) * groupingSize + 1;
     const defaultEnd = defaultGroupNum * groupingSize;
     showGroup(`${defaultStart}-${defaultEnd}`);
+  }
+
+  function getCloudState() {
+    const snapshot = { lesson: selectedLesson, mode: currentMode, favoriteGroup: selectedFavGroup, favoriteLesson: selectedFavLesson, favorites: loadFavorites(), soundEnabled, highlightEnabled, chineseHintEnabled, audioDictationEnabled, score, totalKeys, correctKeys, updatedAt: Date.now() };
+    if (activeStorageKey) localStorage.setItem(activeStorageKey, JSON.stringify(snapshot));
+    return snapshot;
+  }
+  function applyCloudState(next = {}) {
+    selectedLesson = Number(next.lesson) || selectedLesson;
+    currentMode = next.mode || currentMode;
+    selectedFavGroup = next.favoriteGroup || selectedFavGroup;
+    selectedFavLesson = next.favoriteLesson || selectedFavLesson;
+    soundEnabled = next.soundEnabled !== false;
+    highlightEnabled = Boolean(next.highlightEnabled);
+    chineseHintEnabled = next.chineseHintEnabled !== false;
+    audioDictationEnabled = Boolean(next.audioDictationEnabled);
+    localStorage.setItem(favoritesStorageKey, JSON.stringify(next.favorites || []));
+    buildLessonSelector();
+    updateFavBadge();
+    setMode(currentMode);
+  }
+  function activateStudentStorage(identity) {
+    const key = String(identity.userId || identity.username || 'student').trim().toLowerCase().replace(/[^a-z0-9_.:-]/g, '-');
+    activeStorageKey = `nce1-word-typing-v1:${key}`;
+    favoritesStorageKey = `${activeStorageKey}:favorites`;
+    let saved = {};
+    try { saved = JSON.parse(localStorage.getItem(activeStorageKey) || '{}'); } catch { saved = {}; }
+    applyCloudState(saved);
+  }
+  function deactivateStudentStorage() { activeStorageKey = ''; favoritesStorageKey = FAV_KEY; }
+  async function initializeCloudSync() {
+    try {
+      const { createCloudSync } = await import('./cloud-sync.js?v=20260804-cloudbase');
+      cloudSync = await createCloudSync({ appId: 'nce1-word-typing', storageKey: 'nce1-word-typing-v1', getState: getCloudState, applyState: applyCloudState, getSummary: () => ({ lesson: selectedLesson, mode: currentMode, favorites: loadFavorites().length, score, accuracy: totalKeys ? Math.round(correctKeys / totalKeys * 100) : 100 }), onAuthenticated: activateStudentStorage, onSignedOut: deactivateStudentStorage });
+    } catch (error) { console.error('CloudBase 初始化失败', error); }
   }
 
   // --- Init ---
@@ -1012,4 +1053,5 @@
   }
 
   init();
+  initializeCloudSync();
 })();
