@@ -94,8 +94,13 @@
     const favs = loadFavorites();
     const existing = favs.find(f => f.en.toLowerCase() === en.toLowerCase());
     if (existing) {
+      // 收藏夹要求连续正确 5 次；再次输错时从 0 重新累计。
+      let changed = existing.correctStreak !== 0;
       existing.correctStreak = 0;
-      saveFavorites(favs);
+      if (!existing.cn && cn) { existing.cn = cn; changed = true; }
+      if (!existing.lesson && lesson) { existing.lesson = lesson; changed = true; }
+      if (!existing.lessonTitle && lessonTitle) { existing.lessonTitle = lessonTitle; changed = true; }
+      if (changed) saveFavorites(favs);
     } else {
       favs.push({ en, cn, lesson: lesson || 0, lessonTitle: lessonTitle || '', correctStreak: 0 });
       saveFavorites(favs);
@@ -118,7 +123,7 @@
   }
 
   function recordFavWrong(en) {
-    // Cumulative mode: do not reset streak on wrong answer
+    // 连击归零已由 addToFavorites 统一处理，避免一次错键重复写入。
   }
 
   function removeFromFavorites(en) {
@@ -448,10 +453,19 @@
 
         if (isWordLike) {
           if (!currentWordHadError) {
-            recordFavCorrect(currentWord.text);
+            if (currentWord.countsTowardFavorite !== false) {
+              recordFavCorrect(currentWord.text);
+            }
           } else {
-            // 如果输错了，将该词重新插入队列，要求连输2次
-            challengeQueue.splice(queueIndex, 0, currentWord, currentWord);
+            // 一次错误后的整组纠错练习只计为一次收藏夹正确记录。
+            // 第一遍复练不计数，最后一遍继承本题原本的计数资格。
+            const countsTowardFavorite = currentWord.countsTowardFavorite !== false;
+            challengeQueue.splice(
+              queueIndex,
+              0,
+              { ...currentWord, countsTowardFavorite: false },
+              { ...currentWord, countsTowardFavorite }
+            );
           }
         }
         
@@ -677,7 +691,7 @@
 
     let html = '<div class="favorites-list">';
     html += '<h3>⭐ 收藏夹</h3>';
-    html += '<p class="fav-subtitle">打字出错的单词会自动添加到这里 · 累计正确5次自动掌握 ✨</p>';
+    html += '<p class="fav-subtitle">打字出错的单词会自动添加到这里 · 连续正确5次自动掌握 · 每轮纠错只计1次 ✨</p>';
 
     if (favs.length === 0) {
       html += '<div class="fav-empty">还没有收藏的单词 👍<br>继续保持！</div>';
