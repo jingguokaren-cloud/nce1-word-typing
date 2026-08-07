@@ -1,27 +1,30 @@
 /* ============================================
-   打字练习 — 赛博朋克风格
+   打字练习 — 与拖拽练习统一的明亮渐变风格
    ============================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 /* — Design Tokens — */
 :root {
-  --bg-deep: #0a0e1a;
-  --bg-card: rgba(15, 20, 40, 0.85);
-  --bg-glass: rgba(255, 255, 255, 0.04);
-  --neon-blue: #00d4ff;
-  --neon-purple: #a855f7;
-  --neon-pink: #f472b6;
-  --neon-green: #34d399;
-  --neon-yellow: #fbbf24;
-  --neon-red: #f87171;
-  --text-primary: #e2e8f0;
-  --text-secondary: #94a3b8;
-  --text-dim: #475569;
-  --key-bg: rgba(30, 41, 59, 0.8);
-  --key-border: rgba(100, 116, 139, 0.3);
-  --key-active: rgba(0, 212, 255, 0.25);
+  --bg-deep: #667eea;
+  --bg-card: rgba(255, 255, 255, 0.96);
+  --bg-glass: rgba(255, 255, 255, 0.16);
+  --neon-blue: #2563eb;
+  --neon-purple: #7c3aed;
+  --neon-pink: #db2777;
+  --neon-green: #059669;
+  --neon-yellow: #d97706;
+  --neon-red: #dc2626;
+  --text-primary: #1f2937;
+  --text-secondary: #4b5563;
+  --text-dim: #9ca3af;
+  --key-bg: rgba(255, 255, 255, 0.96);
+  --key-border: #cbd5e1;
+  --key-active: #dbeafe;
   --key-highlight: var(--neon-blue);
+  --primary-color: #ffffff;
+  --text-main: #ffffff;
+  --font-mono: 'JetBrains Mono', monospace;
   --radius: 12px;
   --radius-sm: 8px;
   --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -43,22 +46,15 @@
 
 body {
   font-family: 'Outfit', -apple-system, sans-serif;
-  background: var(--bg-deep);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-attachment: fixed;
   color: var(--text-primary);
   min-height: 100vh;
   overflow-x: hidden;
-  background-image:
-    radial-gradient(ellipse 800px 400px at 20% 20%, rgba(0, 212, 255, 0.06), transparent),
-    radial-gradient(ellipse 600px 300px at 80% 80%, rgba(168, 85, 247, 0.06), transparent);
 }
 
 body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.03) 2px, rgba(0, 0, 0, 0.03) 4px);
-  z-index: 9999;
+  display: none;
 }
 
 /* — Layout — */
@@ -68,11 +64,10 @@ body::after {
 .header { text-align: center; margin-bottom: 24px; }
 .header h1 {
   font-size: 2rem; font-weight: 800;
-  background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple), var(--neon-pink));
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  color: white; text-shadow: 0 2px 12px rgba(31, 41, 55, 0.24);
   letter-spacing: 2px;
 }
-.header .subtitle { color: var(--text-secondary); font-size: 0.9rem; margin-top: 4px; }
+.header .subtitle { color: rgba(255, 255, 255, 0.92); font-size: 0.9rem; margin-top: 4px; }
 
 /* — Stats Bar — */
 .stats-bar { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
@@ -399,4 +394,155 @@ body::after {
   .key { width: 26px; height: 36px; font-size: 0.6rem; border-radius: 4px; }
   .key.space { width: 140px; }
   .keyboard-row { gap: 3px; margin-bottom: 3px; }
+}
+
+/* — Light surface refinements — */
+.stat-item,
+.practice-area,
+.sound-toggle {
+  box-shadow: 0 10px 30px rgba(31, 41, 55, 0.14);
+}
+
+.mode-tab,
+.highlight-toggle-btn,
+.display-toggle-btn {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: white;
+}
+
+.mode-tab:hover,
+.highlight-toggle-btn:hover,
+.display-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.26);
+  border-color: white;
+  color: white;
+}
+
+.mode-tab.active {
+  background: white;
+  border-color: white;
+  color: #6d28d9;
+  box-shadow: 0 8px 22px rgba(31, 41, 55, 0.16);
+}
+
+.lesson-group-btn,
+.lesson-btn {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.35);
+  color: white;
+}
+
+.lesson-group-btn:hover,
+.lesson-btn:hover {
+  background: rgba(255, 255, 255, 0.26);
+  border-color: white;
+  color: white;
+}
+
+.lesson-group-btn.active,
+.lesson-btn.active {
+  background: white;
+  border-color: white;
+  color: #6d28d9;
+  text-shadow: none;
+  box-shadow: 0 8px 20px rgba(31, 41, 55, 0.14);
+}
+
+.practice-area {
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.chinese-hint {
+  color: #b45309;
+}
+
+.target-display .char.done,
+.target-display .char.current {
+  text-shadow: none;
+}
+
+.target-display .char.waiting {
+  color: #9ca3af;
+}
+
+.target-display.hidden-word .char.waiting,
+.target-display.hidden-word .char.dictation-hidden {
+  background: #e5e7eb;
+}
+
+.target-display.hidden-word .char.current {
+  background: #dbeafe;
+  border-color: #93c5fd;
+}
+
+.target-display.hidden-word .char.error {
+  background: #fee2e2;
+}
+
+.target-display.hidden-word .char.reveal-hint {
+  background: #fef3c7 !important;
+  text-shadow: none !important;
+}
+
+.progress-bar,
+.timer-bar {
+  background: #e5e7eb;
+}
+
+.input-hint,
+.word-info {
+  color: #6b7280;
+}
+
+.key {
+  box-shadow: 0 4px 10px rgba(31, 41, 55, 0.12);
+}
+
+.key:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+}
+
+.key.highlight {
+  background: #dbeafe;
+  color: #1d4ed8;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.16);
+}
+
+.key.pressed {
+  background: #bfdbfe;
+  border-color: #2563eb;
+  color: #1d4ed8;
+}
+
+.finger-legend,
+.fav-word-item,
+.fav-filter-btn {
+  background: #f8fafc;
+}
+
+.guide-tip {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+.sound-toggle {
+  background: white;
+  color: #4b5563;
+}
+
+.btn-start,
+.btn-continue {
+  border-color: transparent;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: white;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.24);
+}
+
+.btn-start:hover,
+.btn-continue:hover {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: white;
+  box-shadow: 0 10px 26px rgba(37, 99, 235, 0.32);
 }
