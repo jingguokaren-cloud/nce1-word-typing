@@ -53,6 +53,7 @@
   let currentWrongCount = 0;
   let challengeQueue = [];
   let queueIndex = 0;
+  let emptyChallengeVisible = false;
 
   // Speed mode
   let speedTimer = null;
@@ -349,6 +350,7 @@
     startTime = Date.now();
     queueIndex = 0; currentIndex = 0; currentWrongCount = 0;
     isPlaying = true;
+    emptyChallengeVisible = false;
 
     switch (currentMode) {
       case 'letters':
@@ -368,6 +370,7 @@
         : '请选择其他课次';
       practiceArea.innerHTML = `<div class="start-prompt"><h3>😢 没有找到单词</h3><p>${msg}</p></div>`;
       isPlaying = false;
+      emptyChallengeVisible = true;
       return;
     }
 
@@ -806,6 +809,7 @@
   function setMode(mode) {
     currentMode = mode;
     isPlaying = false;
+    emptyChallengeVisible = false;
     if (speedTimer) { clearInterval(speedTimer); speedTimer = null; }
     clearKeyHighlights();
 
@@ -909,11 +913,12 @@
 
       $$('.lesson-btn').forEach(btn => {
         btn.addEventListener('click', () => {
+          const shouldRestart = isPlaying || emptyChallengeVisible;
           selectedLesson = parseInt(btn.dataset.lesson);
           if (cloudSync) cloudSync.queueSync();
           $$('.lesson-btn').forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
-          if (isPlaying) startGame();
+          if (shouldRestart) startGame();
         });
       });
     }

@@ -532,8 +532,8 @@ const nceWords = {
     title: "Lesson 42: Is there a/any...?",
     words: [
       { en: "bird", cn: "鸟" },
-      { en: "any det.", cn: "一些" },
-      { en: "some det.", cn: "一些" }
+      { en: "any", cn: "一些" },
+      { en: "some", cn: "一些" }
     ]
   },
   43: {
@@ -897,7 +897,7 @@ const nceWords = {
       { en: "just", cn: "正好，恰好" },
       { en: "finish", cn: "结尾，结束" },
       { en: "winner", cn: "获胜者" },
-      { en: "behind prop.", cn: "在…之后" },
+      { en: "behind", cn: "在…之后" },
       { en: "way", cn: "路途" }
     ]
   },
@@ -1076,7 +1076,7 @@ const nceWords = {
     title: "Lesson 89: For sale",
     words: [
       { en: "believe", cn: "相信，认为" },
-      { en: "may (", cn: "用于请求许可)可以" },
+      { en: "may", cn: "（用于请求许可）可以" },
       { en: "how long", cn: "多长" },
       { en: "since", cn: "自从" },
       { en: "why", cn: "为什么" },
