@@ -27,8 +27,7 @@
   const highlightStatus = $('#highlightStatus');
   const highlightIcon = $('#highlightIcon');
   const highlightToggleBar = $('#highlightToggleBar');
-  let cloudSync = null;
-  let activeStorageKey = '';
+  const progressStorageKey = 'nce1-word-typing-v1';
 
   // --- State ---
   let currentMode = 'letters'; // 'guide' | 'letters' | 'speed' | 'words' | 'favorites'
@@ -88,7 +87,7 @@
   function saveFavorites(favs) {
     localStorage.setItem(favoritesStorageKey, JSON.stringify(favs));
     updateFavBadge();
-    if (cloudSync) cloudSync.queueSync();
+    saveProgress();
   }
 
   function addToFavorites(en, cn, lesson, lessonTitle) {
@@ -206,7 +205,7 @@
       const minutes = (Date.now() - startTime) / 60000;
       if (minutes > 0.05) wpmEl.textContent = Math.round((charCount / 5) / minutes);
     }
-    if (cloudSync) cloudSync.queueSync();
+    saveProgress();
   }
 
   // --- Keyboard Highlight ---
@@ -915,7 +914,7 @@
         btn.addEventListener('click', () => {
           const shouldRestart = isPlaying || emptyChallengeVisible;
           selectedLesson = parseInt(btn.dataset.lesson);
-          if (cloudSync) cloudSync.queueSync();
+          saveProgress();
           $$('.lesson-btn').forEach(b => b.classList.remove('active'));
           btn.classList.add('active');
           if (shouldRestart) startGame();
@@ -935,12 +934,47 @@
     showGroup(`${defaultStart}-${defaultEnd}`);
   }
 
-  function getCloudState() {
+  function saveProgress() {
     const snapshot = { lesson: selectedLesson, mode: currentMode, favoriteGroup: selectedFavGroup, favoriteLesson: selectedFavLesson, favorites: loadFavorites(), soundEnabled, highlightEnabled, chineseHintEnabled, audioDictationEnabled, score, totalKeys, correctKeys, updatedAt: Date.now() };
-    if (activeStorageKey) localStorage.setItem(activeStorageKey, JSON.stringify(snapshot));
+    try { localStorage.setItem(progressStorageKey, JSON.stringify(snapshot)); } catch (error) { console.warn('本机进度保存失败', error); }
     return snapshot;
   }
-  function applyCloudState(next = {}) {
+  function findLegacyProgressKey(prefix) {
+      let bestKey = "";
+      let bestAt = -1;
+      try {
+          for (let i = 0; i < localStorage.length; i += 1) {
+              const key = localStorage.key(i) || "";
+              if (key.indexOf(prefix + ":") !== 0) continue;
+              if (key.endsWith(":favorites") || key.endsWith(":vocab") || key.endsWith(":audio-padding")) continue;
+              let at = 0;
+              try { at = Number(JSON.parse(localStorage.getItem(key) || "{}").updatedAt) || 0; } catch (error) { at = 0; }
+              if (at > bestAt) { bestAt = at; bestKey = key; }
+          }
+      } catch (error) { bestKey = ""; }
+      return bestKey;
+  }
+  function copyLegacyValue(sourceKey, targetKey) {
+      try {
+          if (localStorage.getItem(targetKey) !== null) return;
+          const value = localStorage.getItem(sourceKey);
+          if (value !== null) localStorage.setItem(targetKey, value);
+      } catch (error) { /* 空间不足时忽略 */ }
+  }
+
+  function loadSavedProgress() {
+      try {
+          const legacyKey = findLegacyProgressKey(progressStorageKey);
+          if (legacyKey && localStorage.getItem(progressStorageKey) === null) {
+              localStorage.setItem(progressStorageKey, localStorage.getItem(legacyKey) || "{}");
+              copyLegacyValue(legacyKey + ":favorites", favoritesStorageKey);
+          }
+          return JSON.parse(localStorage.getItem(progressStorageKey) || "{}") || {};
+      } catch (error) {
+          return {};
+      }
+  }
+  function applySavedProgress(next = {}) {
     selectedLesson = Number(next.lesson) || selectedLesson;
     currentMode = next.mode || currentMode;
     selectedFavGroup = next.favoriteGroup || selectedFavGroup;
@@ -949,25 +983,10 @@
     highlightEnabled = Boolean(next.highlightEnabled);
     chineseHintEnabled = next.chineseHintEnabled !== false;
     audioDictationEnabled = Boolean(next.audioDictationEnabled);
-    localStorage.setItem(favoritesStorageKey, JSON.stringify(next.favorites || []));
+    if (Array.isArray(next.favorites)) localStorage.setItem(favoritesStorageKey, JSON.stringify(next.favorites));
     buildLessonSelector();
     updateFavBadge();
     setMode(currentMode);
-  }
-  function activateStudentStorage(identity) {
-    const key = String(identity.userId || identity.username || 'student').trim().toLowerCase().replace(/[^a-z0-9_.:-]/g, '-');
-    activeStorageKey = `nce1-word-typing-v1:${key}`;
-    favoritesStorageKey = `${activeStorageKey}:favorites`;
-    let saved = {};
-    try { saved = JSON.parse(localStorage.getItem(activeStorageKey) || '{}'); } catch { saved = {}; }
-    applyCloudState(saved);
-  }
-  function deactivateStudentStorage() { activeStorageKey = ''; favoritesStorageKey = FAV_KEY; }
-  async function initializeCloudSync() {
-    try {
-      const { createCloudSync } = await import('./cloud-sync.js?v=20260804-cloudbase');
-      cloudSync = await createCloudSync({ appId: 'nce1-word-typing', storageKey: 'nce1-word-typing-v1', getState: getCloudState, applyState: applyCloudState, getSummary: () => ({ lesson: selectedLesson, mode: currentMode, favorites: loadFavorites().length, score, accuracy: totalKeys ? Math.round(correctKeys / totalKeys * 100) : 100 }), onAuthenticated: activateStudentStorage, onSignedOut: deactivateStudentStorage });
-    } catch (error) { console.error('CloudBase 初始化失败', error); }
   }
 
   // --- Init ---
@@ -1071,6 +1090,7 @@
     });
   }
 
+  const initialSavedProgress = loadSavedProgress();
   init();
-  initializeCloudSync();
+  applySavedProgress(initialSavedProgress);
 })();
